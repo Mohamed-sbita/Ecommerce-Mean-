@@ -1,0 +1,89 @@
+
+<mat-drawer-container
+  [autosize]="true"
+  class="min-h-full max-w-7xl mx-auto border-x"
+>
+<div class="flex min-h-full items-center justify-center py-7 px-2 sm:px-2 lg:px-3" style="padding-bottom: 170px;" >
+  <div class="w-full max-w-md space-y-5">
+
+    <br>
+    <div>
+      <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+        Sign up
+      </h2>
+    </div>
+    <form class="mt-8 space-y-6" >
+      <div class="-space-y-px rounded-md shadow-sm">
+        <div>
+          <label class="sr-only">First Name</label>
+          <input   (focus)="ruturnn()" type="text" name="firstname"
+            class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            placeholder="First Name"
+            [(ngModel)]="user.firstName"
+            />
+            <div *ngIf="err.firstName"  class="invalid-feedback " style="color: red;">
+              {{err.firstName}}
+            </div>
+        </div>
+        <br />
+
+        <div>
+          <label class="sr-only">Last Name</label>
+          <input (focus)="ruturnn()" type="text" name="lastname"
+            class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            placeholder="Last Name" 
+            [(ngModel)]="user.lastName"/>
+            <div *ngIf="err.lastName"  class="invalid-feedback " style="color: red;">
+              {{err.lastName}}
+            </div>
+        </div>
+
+        <br />
+
+        <div>
+          <label class="sr-only">Email address</label>
+          <input (focus)="ruturnn()" type="email" autocomplete="email" name="email"
+            class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            placeholder="Email address"
+            [(ngModel)]="user.email" />
+            <div *ngIf="err.email"  class="invalid-feedback " style="color: red;">
+              {{err.email}}
+            </div>
+        </div>
+        <br />
+
+        <div>
+          <label for="password" class="sr-only">Password</label>
+          <input (focus)="ruturnn()" type="password" name="password"
+            class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            placeholder="Password"
+            [(ngModel)]="user.password" />
+            <div *ngIf="err.password"  class="invalid-feedback " style="color: red;">
+              {{err.password}}
+            </div>
+        </div>
+        <br />
+      </div>
+
+      <div>
+        <button  (click)="sginup()"
+          class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <!-- Heroicon name: mini/lock-closed -->
+            <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z"
+                clip-rule="evenodd" />
+            </svg>
+          </span>
+          Sign Up
+        </button >
+        <br />
+
+      </div>
+      
+    </form>
+  </div>
+</div>
+</mat-drawer-container>

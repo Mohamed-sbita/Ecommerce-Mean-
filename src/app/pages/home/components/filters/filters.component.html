@@ -1,0 +1,13 @@
+<mat-expansion-panel *ngIf="categories">
+  <mat-expansion-panel-header>
+    <mat-panel-title> CATEGORIES </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-selection-list [multiple]="false">
+    <mat-list-option  >
+      <button (click)="onShowCategory('')" >All categories</button>
+    </mat-list-option>
+    <mat-list-option *ngFor="let category of categories" [value]="category.cName">
+      <button (click)="onShowCategory(category._id)">{{ category.cName }}</button>
+    </mat-list-option>
+  </mat-selection-list>
+</mat-expansion-panel>

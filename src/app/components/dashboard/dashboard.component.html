@@ -1,0 +1,326 @@
+<mat-drawer-container [autosize]="true" class="min-h-full max-w-7xl mx-auto border-x p-4">
+    <mat-drawer mode="side" opened class="p-3">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Dashboard <mat-icon>settings</mat-icon> </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-selection-list [multiple]="false">
+                <mat-list-option>
+                    <button (click)="viewP()">Products</button>
+                </mat-list-option>
+                <mat-list-option>
+                    <button (click)="viewC()">Category</button>
+                </mat-list-option>
+            <mat-list-option>
+                <button (click)="viewO()">Orders</button>
+            </mat-list-option>
+        </mat-selection-list>
+        </mat-expansion-panel>
+
+    </mat-drawer>
+    <div class="products" *ngIf="viewp">
+        <h1 style="padding: 5px;">Products : </h1>
+        <button type="button" (click)="formee=!formee"
+            class="text-sm text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 px-5 ">
+            <mat-icon>add_circle</mat-icon><b>Create</b>
+        </button>
+
+        <!-- form ajout product -->
+        <!-- <div *ngIf="formee" style="padding-left: 5%; padding-bottom: 2%; padding-top: 2%;">
+                                
+<form>
+    <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-6 group">
+        <input type="text" name="product name"  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" [(ngModel)]="product.pName" placeholder="name" required />
+        <label for="productN" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" >Product Name</label>
+    </div>
+    </div>
+    <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-6 group">
+        <input type="text" name="description"  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" [(ngModel)]="product.pDescription" placeholder=" " required />
+        <label class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">description</label>
+    </div>
+    </div>
+    <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-6 group">
+        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" [(ngModel)]="product.pPrice" placeholder=" " required />
+        <label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Price</label>
+    </div>
+</div>
+    
+    <div class="grid md:grid-cols-2 md:gap-6">
+        <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  <option selected>Choose a country</option>
+  <option value="US">United States</option>
+  <option value="CA">Canada</option>
+  <option value="FR">France</option>
+  <option value="DE">Germany</option>
+</select>
+
+       
+      </div>
+    <div class="grid md:grid-cols-2 md:gap-6">
+      <div class="relative z-0 w-full mb-6 group">
+        image :
+          <input type="file" (change)="select($event)" name="image"  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent  appearance-none dark:text-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 " placeholder=" " required />
+      </div>
+    </div>
+     
+ 
+   
+
+    <button type="button" (click)="add()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add </button>
+  </form>
+                
+
+            </div> -->
+        <div *ngIf="formee" style="padding-left: 2%; padding-bottom: 2%; padding-top: 2%;">
+
+            <form>
+                <div class="grid gap-6 mb-6 md:grid-cols-2">
+                    <div>
+
+                        <input [(ngModel)]="product.pName" type="text" name="pname"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Product Name" required>
+                    </div>
+                    <div>
+                        <input [(ngModel)]="product.pDescription" type="text" name="pDescription"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Product Description" required>
+                    </div>
+                    <div>
+                        <input [(ngModel)]="product.pPrice" type="number" name="price"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="product Price" required>
+                    </div>
+                    
+                    <select id="countries" [(ngModel)]="product.pCategory" name="pCategory"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                         
+                        <option [value]="item._id" *ngFor="let item of categories">{{item.cName}}</option>
+                       
+                    </select>
+                    <div>
+                        <input (change)="select($event)" type="file" id="visitors"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="" required>
+                    </div>
+                </div>
+                <button type="button" (click)="add()"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+                </button>
+            </form>
+        </div>
+
+
+
+        <!-- fin form product -->
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Product image
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Product name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Description
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Category
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Price
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="products==''">
+                    <td colspan="12" class="text-xl text-center font-semibold py-8">No Product found</td>
+                </tr>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let item of products">
+                    <td scope="row" class="px-6 py-4 ">
+                        <img [src]="'http://127.0.0.1:3000/getimageP/'+item.pImages" alt="" srcset=""
+                            style="width: 50px; height: 50px;">
+                    </td>
+                    <!-- [src]="'http://127.0.0.1:3000/getimageP/'+element.product" -->
+                    <td scope="row" class="px-6 py-4 ">
+                        {{item.pName| slice:0:15 }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{(item.pDescription | slice:0:50 )+"..." }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{item.pCategory.cName}}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{item.pPrice}}
+                    </td>
+                    <td class="px-6 py-4 ">
+                        <button><mat-icon>edit</mat-icon></button>
+                        <button (click)="deleteP(item._id)"><mat-icon>delete</mat-icon></button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="Category" *ngIf="viewc">
+        <h1 style="padding: 5px;">Category : </h1>
+        <button type="button" (click)="formeeC=!formeeC"
+            class="text-sm text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 px-5"><mat-icon>add_circle</mat-icon></button>
+
+        <!-- form add categories -->
+        <div *ngIf="formeeC" style="padding-left: 5%; padding-bottom: 2%; padding-top: 2%;">
+
+            <form>
+                <div class="grid gap-6 mb-6 md:grid-cols-2">
+                    <div>
+                        <input [(ngModel)]="category.cName" type="text" name="cname"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="categorie Name" required>
+                    </div>
+                    <div>
+                        <input [(ngModel)]="category.cDescription" type="text" name="cdesc"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="categorie description" required>
+                    </div>
+                    
+                <button type="button" (click)="addCat()"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+                </button>
+                </div></form>
+           
+
+
+        </div>
+        <!-- end form  -->
+        <!-- form edite -->
+        <div *ngIf="formeeC1" style="padding-left: 5%; padding-bottom: 2%; padding-top: 2%;">
+
+            <form>
+                <div class="grid gap-6 mb-6 md:grid-cols-2">
+                    <div>
+                        <input [(ngModel)]="category.cName" type="text" name="cname"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="categorie Name" required>
+                    </div>
+                    <div>
+                        <input [(ngModel)]="category.cDescription" type="text" name="cdesc"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="categorie description" required>
+                    </div>
+                    
+                <button type="button" (click)="edit(category._id)"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Set
+                </button>
+                </div></form>
+           
+
+
+        </div>
+        <!-- end edite forme  -->
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Category name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Category description
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="categories==''">
+                    <td colspan="12" class="text-xl text-center font-semibold py-8">No Category found</td>
+                </tr>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let item of categories">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {{item.cName}}
+                    </th>
+                    <td>
+                        {{(item.cDescription | slice:0:50 )+"..."}}
+                    </td>
+
+                    <td class="px-6 py-4 ">
+                        <button (click)="editeCat(item._id)"><mat-icon>edit</mat-icon></button>
+                        <button (click)="deleteCat(item._id)"><mat-icon>delete</mat-icon></button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <div  *ngIf="viewo" class="orders">
+        <table class="table-auto border-b-2 w-full my-2">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2 border">Products Image</th>
+                    <th class="px-4 py-2 border">Products Name</th>
+                    <th class="px-4 py-2 border">Quntity</th>
+                    <th class="px-4 py-2 border">Price</th>
+                    <th class="px-4 py-2 border">Total</th>
+                    <th class="px-4 py-2 border">Customer</th>
+                    <th class="px-4 py-2 border">Created at</th>
+                    <th class="px-4 py-2 border">Status</th>
+                    <th class="px-4 py-2 border">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+               <tr  *ngFor="let item of orders">
+                    <td class=" text-center border  "><span *ngFor="let i of item.allProduct" ><img [src]="'http://127.0.0.1:3000/getimageP/'+i.id.pImages" alt="" srcset="" style="width:80px;height: 60px;"><br></span></td> 
+                    <td class=" text-center border "><span *ngFor="let i of item.allProduct">{{(i.id.pName | slice:0:50) +"..."}}<br><br><br></span></td>
+                    <td class=" text-center border "><span *ngFor="let i of item.allProduct">{{i.qu}}<br><br><br></span></td>
+                    <td class=" text-center border "><span *ngFor="let i of item.allProduct">{{i.id.pPrice}}<br><br><br></span></td>
+
+                    <td class=" text-center border ">{{item.amount}}DT</td>
+                    <td class=" text-center border ">{{item.user.firstName+' '+item.user.lastName}}</td>
+                    <td class=" text-center border ">{{item.createdAt | date: 'yyyy-MM-dd'}}</td>
+                    <td class="text-sm text-center font-semibold border "><button [ngClass]="{'not':item.status=='Not processed','shepp':item.status=='Shipped','delivred':item.status=='Delivered','cancel':item.status=='Cancelled','pross':item.status=='Processing'}"> {{item.status}}</button></td>
+                    <td class=" text-center border "><button mat-button [matMenuTriggerFor]="menu"><mat-icon>edit</mat-icon></button>
+                        <mat-menu #menu="matMenu">
+                          <button mat-menu-item (click)="onselectionchange('Not processed',item._id)">Not processed</button>
+                          <button mat-menu-item (click)="onselectionchange('Processing',item._id)">Processing</button>
+                          <button mat-menu-item (click)="onselectionchange('Shipped',item._id)">Shipped</button>
+                          <button mat-menu-item (click)="onselectionchange('Delivered',item._id)">Delivered</button>
+                          <button mat-menu-item (click)="onselectionchange('Cancelled',item._id)">Cancelled</button>
+                        </mat-menu>
+                        
+                       
+                        
+                        
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+      
+
+        
+    </div>
+
+
+</mat-drawer-container>
+
+
+
+
+<!-- 
+
+
+    <table class="table-auto border w-full my-2"><thead><tr><th class="px-4 py-2 border">Products</th><th class="px-4 py-2 border">Status</th><th class="px-4 py-2 border">Total</th><th class="px-4 py-2 border">Transaction Id</th><th class="px-4 py-2 border">Customer</th><th class="px-4 py-2 border">Email</th><th class="px-4 py-2 border">Phone</th><th class="px-4 py-2 border">Address</th><th class="px-4 py-2 border">Created at</th><th class="px-4 py-2 border">Updated at</th><th class="px-4 py-2 border">Actions</th></tr></thead><tbody><tr><td colspan="12" class="text-xl text-center font-semibold py-8">No order found</td></tr></tbody></table>
+ -->
